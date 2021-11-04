@@ -8,3 +8,4 @@
 - firebase v9
 - nextauth
 - tailwindcss
+- recoil

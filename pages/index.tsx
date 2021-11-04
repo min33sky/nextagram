@@ -12,8 +12,6 @@ const Home: NextPage = () => {
       </Head>
 
       <Header />
-
-      <p className="">Hello NextJs</p>
     </div>
   );
 };
