@@ -12,7 +12,7 @@ import {
 
 function Header() {
   return (
-    <header>
+    <header className="sticky top-0 z-50 bg-white border-b shadow-sm">
       <div className="flex justify-between max-w-6xl mx-2 lg:mx-auto">
         {/* Left */}
         <div className="relative hidden w-24 cursor-pointer lg:inline-grid">
@@ -21,6 +21,7 @@ function Header() {
             layout="fill"
             alt="logo"
             objectFit="contain"
+            loading="lazy"
           />
         </div>
 
@@ -61,6 +62,7 @@ function Header() {
           <UserGroupIcon className="navBtn" />
           <HeartIcon className="navBtn" />
 
+          {/* 프로필 아이콘 */}
           <div className="relative w-10 h-10 transition-all duration-150 ease-out hover:scale-125">
             <Image
               src="https://image.fmkorea.com/files/attach/new/20200930/2579540351/464755813/3119728108/ea619b94423e885fe74794c41791497f.png"
