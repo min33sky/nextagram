@@ -31,6 +31,7 @@ function Header() {
             layout="fill"
             objectFit="contain"
             alt="Logo-small"
+            priority
           />
         </div>
 
