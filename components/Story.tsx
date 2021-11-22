@@ -12,7 +12,7 @@ function Story({ img, username }: IStory) {
       <div className="relative p-[1.5px] rounded-full ring-1 ring-red-500">
         <div className="relative rounded-full ring-1 ring-blue-700 w-14 h-14">
           <Image
-            src="https://placeimg.com/500/500/any"
+            src="https://placeimg.com/100/100/any"
             // src={img}
             alt="Story_Image"
             className="rounded-full cursor-pointer"
