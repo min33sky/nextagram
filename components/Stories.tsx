@@ -32,7 +32,7 @@ function Stories() {
   }, []);
 
   return (
-    <div>
+    <div className="flex p-6 mt-8 space-x-2 overflow-x-scroll bg-white border border-gray-200 rounded-sm">
       {suggestions.map((suggestion, idx) => (
         <Story key={suggestion.id} img={suggestion.avatar} username={suggestion.username} />
       ))}
