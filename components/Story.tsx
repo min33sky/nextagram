@@ -9,13 +9,16 @@ interface IStory {
 function Story({ img, username }: IStory) {
   return (
     <div>
-      <div className="relative p-[1.5px] rounded-full ring-1 ring-red-500">
-        <div className="relative rounded-full ring-1 ring-blue-700 w-14 h-14">
+      <div className="relative p-[1.5px] rounded-full ring-1 ring-indigo-500 hover:scale-110 transition transform duration-200 ease-out">
+        <div className="relative rounded-full w-14 h-14">
+          {/*
+            ! FakerCloud가 서버 에러가 뜰 때가 있어서 임시 이미지 주소 배정
+           */}
           <Image
             src="https://placeimg.com/100/100/any"
             // src={img}
             alt="Story_Image"
-            className="rounded-full cursor-pointer"
+            className="rounded-full cursor-pointer "
             layout="fill"
             loading="lazy"
             blurDataURL="https://placeimg.com/100/100/any"
