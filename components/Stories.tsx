@@ -16,7 +16,7 @@ type SuggestionsType = {
 }[];
 
 /**
- *
+ * Stories
  * @returns
  */
 function Stories() {
@@ -32,9 +32,9 @@ function Stories() {
   }, []);
 
   return (
-    <div className="flex p-6 mt-8 space-x-2 overflow-x-scroll bg-white border border-gray-200 rounded-sm scrollbar-thin scrollbar-thumb-black">
-      {suggestions.map((suggestion, idx) => (
-        <Story key={suggestion.id} img={suggestion.avatar} username={suggestion.username} />
+    <div className="flex p-6 mt-8 space-x-2 overflow-x-scroll bg-white border border-gray-200 rounded-sm shadow-md scrollbar-thin scrollbar-thumb-gray-700">
+      {suggestions.map(({ id, avatar, username }) => (
+        <Story key={id} img={avatar} username={username} />
       ))}
     </div>
   );

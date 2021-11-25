@@ -66,7 +66,7 @@ function Header() {
           {/* 프로필 아이콘 */}
           <div className="relative w-10 h-10 transition-all duration-150 ease-out hover:scale-125">
             <Image
-              src="https://image.fmkorea.com/files/attach/new/20200930/2579540351/464755813/3119728108/ea619b94423e885fe74794c41791497f.png"
+              src="https://w.namu.la/s/aa62bb55ff504ce4c4f858973e05fb37c29fe1c8e8064e62136016a251fdade09d46957a3ced9f0cb8e4897605713cc2a61731e8e3410b998f963d86c7ec874095038ff82de257eb240e7f774f1cc0e850afb76905cb223118d738dededc0fb1b17610cc7ede649a1d0c60bf77c6bce0"
               layout="fill"
               className="rounded-full cursor-pointer "
               alt="profile_image"
