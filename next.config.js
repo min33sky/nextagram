@@ -4,10 +4,10 @@ module.exports = {
   images: {
     domains: [
       'links.papareact.com',
-      'image.fmkorea.com',
       'cdn.fakercloud.com',
       'placeimg.com',
       'w.namu.la',
+      'lh3.googleusercontent.com',
     ],
   },
 };

@@ -1,5 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
+import { createAvatar } from '@dicebear/avatars';
+import * as style from '@dicebear/adventurer';
 
 interface IStory {
   img: string;
@@ -7,25 +9,17 @@ interface IStory {
 }
 
 function Story({ img, username }: IStory) {
+  const svg1 = createAvatar(style, {
+    seed: img,
+  });
+
   return (
     <div>
-      <div className="relative p-[1.5px] rounded-full ring-1 ring-indigo-500 hover:scale-110 transition transform duration-200 ease-out">
-        <div className="relative rounded-full w-14 h-14">
-          {/*
-            ! FakerCloud가 서버 에러가 뜰 때가 있어서 임시 이미지 주소 배정
-           */}
-          <Image
-            src="https://placeimg.com/100/100/any"
-            // src={img}
-            alt="Story_Image"
-            className="rounded-full cursor-pointer "
-            layout="fill"
-            loading="lazy"
-            blurDataURL="https://placeimg.com/100/100/any"
-            placeholder="blur"
-          />
-        </div>
-      </div>
+      {/* Avatar */}
+      <div
+        className="w-12 h-12 p-[1.5px] rounded-full ring-1 ring-gray-400 hover:scale-105 transition-all duration-150 ease-out cursor-pointer "
+        dangerouslySetInnerHTML={{ __html: svg1 }}
+      />
       <p className="text-xs font-semibold text-center truncate w-14">{username}</p>
     </div>
   );

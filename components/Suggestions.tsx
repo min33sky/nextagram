@@ -16,6 +16,7 @@ type SuggestionType = {
   company: Faker.Company;
 }[];
 
+//? 아바타 생성에 필요한 Seed
 const DUMMY_AVATAR = ['AAAA AA', 'BBB BBBB', 'CCCC CCC', 'DDDD DD', 'AAAA QQ'];
 
 function Suggestions() {
