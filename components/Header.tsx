@@ -10,6 +10,8 @@ import {
   UserGroupIcon,
 } from '@heroicons/react/outline';
 import { signIn, signOut, useSession } from 'next-auth/react';
+import { useRecoilState } from 'recoil';
+import { modalState } from '../store/modalAtom';
 
 /**
  * Header
@@ -17,8 +19,7 @@ import { signIn, signOut, useSession } from 'next-auth/react';
  */
 function Header() {
   const { data: session } = useSession();
-
-  console.log('session: ', session);
+  const [open, setOpen] = useRecoilState(modalState);
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b shadow-sm">
@@ -71,7 +72,7 @@ function Header() {
                   3
                 </div>
               </div>
-              <PlusCircleIcon className="navBtn" />
+              <PlusCircleIcon onClick={() => setOpen(true)} className="navBtn" />
               <UserGroupIcon className="navBtn" />
               <HeartIcon className="navBtn" />
 

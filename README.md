@@ -6,6 +6,6 @@
 
 - nextjs
 - firebase v9
-- nextauth
+- next-auth
 - tailwindcss
 - recoil
