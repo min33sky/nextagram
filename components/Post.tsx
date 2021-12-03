@@ -41,24 +41,26 @@ interface IPost {
 function Post({ id, username, img, caption, userImg }: IPost) {
   const { data: session } = useSession();
   const [comment, setComment] = useState('');
-  const [comments, setComments] = useState<QueryDocumentSnapshot<DocumentData>[]>([]); // 댓글 리스트
+  const [comments, setComments] = useState<QueryDocumentSnapshot<DocumentData>[]>([]); //? 댓글 리스트
   const [likes, setLikes] = useState<QueryDocumentSnapshot<DocumentData>[]>([]); //? 게시물에 좋아요를 누른 사람들의 아이디
-  const [hasLiked, setHasLiked] = useState(false);
+  const [hasLiked, setHasLiked] = useState(false); //? 이 게시물에 좋아요를 눌렀는지 여부
 
-  // console.log('아 이 디 : ', id);
-
+  /**
+   *? 댓글 데이터를 감시하는 리스너
+   *? 리스너가 unsubscribe 함수를 리턴하기 때문에 cleanup 함수 처리부분에 위치시켰다.
+   */
   useEffect(
     () =>
       onSnapshot(
         query(collection(db, 'posts', id, 'comments'), orderBy('timestamp', 'desc')),
         (snapshot) => {
-          // console.log('게시물 목록 가져오기: ', snapshot.docs);
           setComments(snapshot.docs);
         }
       ),
     [id]
   );
 
+  //? 좋아요 리스너
   useEffect(
     () =>
       onSnapshot(collection(db, 'posts', id, 'likes'), (snapshot) => {
@@ -73,6 +75,7 @@ function Post({ id, username, img, caption, userImg }: IPost) {
     setHasLiked(idx !== -1);
   }, [likes, session?.uid]);
 
+  //? 좋아요 처리
   const likePost = useCallback(async () => {
     if (session?.uid) {
       if (hasLiked) {
@@ -193,7 +196,7 @@ function Post({ id, username, img, caption, userImg }: IPost) {
         )}
       </section>
 
-      {/* Input BOx */}
+      {/* Input Box */}
       {session && (
         <section>
           <form onSubmit={sendComment} className="flex items-center p-4">
