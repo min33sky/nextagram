@@ -34,8 +34,6 @@ function Modal() {
       timestamp: serverTimestamp(),
     });
 
-    console.log('New doc added with ID: ', docRef.id);
-
     //* 방금 저장한 DB의 Document ID값을 이용하여 Storage에 저장할 주소를 설정한다.
     const imageRef = await ref(storage, `posts/${docRef.id}/image`);
 

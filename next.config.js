@@ -8,6 +8,7 @@ module.exports = {
       'placeimg.com',
       'w.namu.la',
       'lh3.googleusercontent.com',
+      'firebasestorage.googleapis.com',
     ],
   },
 };
